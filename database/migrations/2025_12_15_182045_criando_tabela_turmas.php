@@ -26,6 +26,13 @@ return new class extends Migration
                   ->on('usuarios')
                   ->nullOnDelete()
                   ->cascadeOnUpdate();
+            
+            $table->unsignedBigInteger('aluno_id')->nullable();
+            $table->foreign('aluno_id')
+                  ->references('id_usuario')
+                  ->on('usuarios')
+                  ->nullOnDelete() // Permite que a disciplina exista sem aluno
+                  ->cascadeOnUpdate();
 
             $table->timestamps();
         });

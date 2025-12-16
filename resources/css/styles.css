@@ -1,0 +1,15 @@
+/*
+ * Efeito de ressalto/sombra ao passar o mouse
+ */
+.form-control:focus, 
+.form-control:hover {
+    /* Adiciona uma sombra mais escura e levemente levantada */
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25), 
+                0 4px 8px rgba(0, 0, 0, 0.15); /* Sombra customizada para "ressalto" */
+    
+    /* Leve transição para suavizar o efeito de ressalto */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+
+
