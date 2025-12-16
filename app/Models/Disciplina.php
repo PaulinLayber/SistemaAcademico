@@ -15,5 +15,4 @@ class Disciplina extends Model
         'nome', 
         'descricao'
     ];
-    
 }

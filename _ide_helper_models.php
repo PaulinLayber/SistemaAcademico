@@ -38,6 +38,8 @@ namespace App\Models{
  * @property int $aluno_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\Usuario $aluno
+ * @property-read \App\Models\Turma $turma
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Nota newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Nota newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Nota query()
@@ -83,6 +85,8 @@ namespace App\Models{
  * @property string $role
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Nota> $notas
+ * @property-read int|null $notas_count
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Usuario newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Usuario newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Usuario query()

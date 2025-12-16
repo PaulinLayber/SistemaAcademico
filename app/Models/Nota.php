@@ -12,11 +12,16 @@ class Nota extends Model
     protected $fillable = [
         'valor',
         'aluno_id',
-        'atividade_id',
+        'turma_id',
     ];
 
     public function aluno()
     {
-        return $this->belongsTo(Aluno::class, 'aluno_id', 'id_aluno');
+        return $this->belongsTo(Usuario::class, 'aluno_id', 'id_usuario');
+    }
+
+    public function turma()
+    {
+        return $this->belongsTo(Turma::class, 'turma_id', 'id_turma');
     }
 }
