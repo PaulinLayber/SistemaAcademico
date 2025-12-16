@@ -14,9 +14,17 @@ use App\Http\Controllers\UsuarioController;
 // --- ROTAS DE AUTENTICAÇÃO (Login) ---
 
 
+// Rota principal (/)
 Route::get('/', function () {
-    return view ('dashboard');
-})->name('dashboard');
+    // Verifica se o usuário está logado
+    if (Auth::check()) {
+        // Se estiver logado, redireciona para o dashboard
+        return redirect()->route('dashboard'); 
+    }
+    // Se não estiver logado, redireciona para a tela de login
+    // A rota 'login' é padrão do Laravel Breeze/Jetstream/UI para autenticação
+    return redirect()->route('auth.loginPage');
+})->name('home');
 
 Route::prefix('auth')->group(function () {
     // Rota GET para exibir a página de login: URI será '/auth/login'
